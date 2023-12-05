@@ -44,25 +44,6 @@ module Blogit
         render status: (comment.persisted? ? :created : :bad_request)
       end
 
-      # The create action render call when format is HTML
-      def create_respond_to_html
-        if comment.persisted?
-          redirect_to(post,
-            notice: t(:successfully_added_comment, scope: "blogit.comments"))
-        else
-          render "blogit/posts/show"
-        end
-      end
-
-<<<<<<< HEAD
-      # The comment attribute params
-      #
-      # Returns a Hash
-      def comment_params
-        params.require(:comment).permit(:name, :nickname, :email, :body, :website)
-      end
-  end
-=======
     # The create action render call when format is HTML
     def create_respond_to_html
       if comment.persisted?
@@ -73,14 +54,11 @@ module Blogit
       end
     end
 
-    # The comment attribute params
-    #
-    # Returns a Hash
-    def comment_params
-      params.require(:comment).permit(:name, :nickname, :email, :body, :website)
-    end
-
+      # The comment attribute params
+      #
+      # Returns a Hash
+      def comment_params
+        params.require(:comment).permit(:name, :nickname, :email, :body, :website)
+      end
   end
-
->>>>>>> 95eecf66f9d08e42ce2dd38f38524ddd8e0ea9f8
 end
