@@ -37,6 +37,8 @@ module Blogit
     # Returns an ActiveRecord::Relation instance
     has_many :comments, class_name: "Blogit::Comment"
 
+    has_one_attached :image, dependent: :destroy
+
     # ==========
     # = Scopes =
     # ==========
