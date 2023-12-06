@@ -2,9 +2,6 @@ module Blogit
 
   # Handles requests for creating Blogit::Comments
   class CommentsController < ::Blogit::ApplicationController
-
-    skip_before_action :authenticate
-
     # Accessor method for the comment being created
     #
     # Returns a Blogit::Comment
