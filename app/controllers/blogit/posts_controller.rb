@@ -1,8 +1,6 @@
 module Blogit
   # Handles requests for viewing Blogit::Posts
   class PostsController < ::Blogit::ApplicationController
-    skip_before_action :authenticate
-    
     # The current Blogit::Post being displayed.
     #
     # Returns a Blogit::Post with id from params
