@@ -29,7 +29,7 @@ module Blogit
     # The blogger (User, Admin, etc.) who wrote this Post
     #
     # Returns a Blogger (polymorphic type)
-    belongs_to :blogger, polymorphic: true
+    belongs_to :blogger, polymorphic: true, default: -> { Current.user }
 
     ##
     # The {Comment Comments} written on this Post
