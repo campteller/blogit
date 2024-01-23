@@ -1,7 +1,6 @@
 module Blogit
   # Inherits from the application's controller instead of ActionController::Base
   class ApplicationController < ::ApplicationController
-    skip_before_action :authenticate
     
     helper Blogit::ApplicationHelper
     helper Blogit::LayoutHelper
