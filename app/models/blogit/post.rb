@@ -1,9 +1,6 @@
 module Blogit
   class Post < ApplicationRecord
     require "kaminari"
-    require "acts-as-taggable-on"
-
-    acts_as_taggable
 
     paginates_per(Blogit.configuration.posts_per_page)
 
