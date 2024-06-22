@@ -18,8 +18,7 @@ module Blogit
     # Returns an HTML safe String.
     def format_content(content = nil, &block)
       content = capture(&block) if block_given?
-      parser  = Blogit::configuration.default_parser_class.new(content)
-      parser.parsed.to_s.html_safe
+      content.to_s.html_safe
     end
 
     # The first error message for an ActiveRecord::Base model instance attribute

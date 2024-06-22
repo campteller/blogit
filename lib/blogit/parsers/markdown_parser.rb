@@ -1,6 +1,5 @@
 class Blogit::Parsers::MarkdownParser
   require "nokogiri"
-  require "blogit/renderers"
 
   # A String containing the content to be parsed
   attr_reader :content
