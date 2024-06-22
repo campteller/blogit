@@ -15,16 +15,6 @@ module Blogit
     #   "hidden". ("Hidden" {Post posts} are those that may not be viewed by the public).
     HIDDEN_STATES = %i(draft archive).freeze
 
-    # When using redcarpet as content parser, pass these options as defaults.
-    REDCARPET_OPTIONS = {
-      hard_wrap: true,
-      filter_html: true,
-      autolink: true,
-      no_intra_emphasis: true,
-      fenced_code_blocks: true,
-      gh_blockcode: true
-    }.freeze
-
     ##
     # How do you want to handle comments for your blog?
     #   Valid options are :active_record, :disquss, or :no for none.
@@ -82,12 +72,6 @@ module Blogit
     # Defaults to true
     # @note - At the moment this only works when default_parser is :markdown
     config_accessor(:highlight_code_syntax) { false }
-
-    ##
-    # When using redcarpet as content parser, pass these options as defaults
-    #
-    # Defaults to {REDCARPET_OPTIONS}
-    config_accessor(:redcarpet_options) { REDCARPET_OPTIONS }
 
     ##
     # List of states that will be visible to the public

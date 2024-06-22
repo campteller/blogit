@@ -38,17 +38,6 @@ Blogit.configure do |config|
   # RSS Feed description content
   config.rss_feed_description = "Latest from #{Rails.application.engine_name.titleize}"
 
-  # When using redcarpet as content parser, pass these options as defaults.
-  # @see here for more options: https://github.com/tanoku/redcarpet
-  config.redcarpet_options = {
-    hard_wrap: true,
-    filter_html: true,
-    autolink: true,
-    no_intraemphasis: true,
-    fenced_code_blocks: true,
-    gh_blockcode: true
-  }
-
   # If this is set, Blogit::PostsController will use the layout named here
   config.layout = "application"
 

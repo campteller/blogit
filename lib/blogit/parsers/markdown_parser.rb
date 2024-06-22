@@ -1,5 +1,4 @@
 class Blogit::Parsers::MarkdownParser
-  require "redcarpet"
   require "nokogiri"
   require "blogit/renderers"
 
@@ -20,19 +19,12 @@ class Blogit::Parsers::MarkdownParser
 
   private
 
-    # The Redcarpet renderer to use
     def renderer
-      if Blogit::configuration.highlight_code_syntax
-        Blogit::Renderers.choose_highlight_renderer
-      else
-        Redcarpet::Render::HTML
-      end
+      false
     end
 
-    # The Redcarpet Markdown handler
     def markdown
-      @markdown ||= Redcarpet::Markdown.new(renderer,
-        Blogit.configuration.redcarpet_options)
+      @markdown ||= false
     end
 
     # Ensures pygments is installed
