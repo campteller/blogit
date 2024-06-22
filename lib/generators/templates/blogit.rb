@@ -30,10 +30,7 @@ Blogit.configure do |config|
 
   # If blog content contains code, this should be highlighted using
   # one of the renderers.
-  config.highlight_code_syntax = true
-
-  # The syntax highlighter to use when highlight_code_syntax is set.
-  config.syntax_highlighter = :albino
+  config.highlight_code_syntax = false
 
   # RSS Feed title content
   config.rss_feed_title = "#{Rails.application.engine_name.titleize} Blog Posts"

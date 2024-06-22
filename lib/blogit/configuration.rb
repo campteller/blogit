@@ -81,12 +81,7 @@ module Blogit
     # Should text within "```" or "`" be highlighted as code?
     # Defaults to true
     # @note - At the moment this only works when default_parser is :markdown
-    config_accessor(:highlight_code_syntax) { true }
-
-    ##
-    # The renderer used for code highlighting
-    # Defaults to :albino
-    config_accessor(:syntax_highlighter) { :albino }
+    config_accessor(:highlight_code_syntax) { false }
 
     ##
     # When using redcarpet as content parser, pass these options as defaults
