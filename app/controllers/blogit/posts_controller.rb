@@ -1,6 +1,8 @@
 module Blogit
   # Handles requests for viewing Blogit::Posts
   class PostsController < ::Blogit::ApplicationController
+    allow_unauthenticated_access
+    
     # The current Blogit::Post being displayed.
     #
     # Returns a Blogit::Post with id from params
