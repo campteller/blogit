@@ -1,8 +1,7 @@
 module Blogit
   # Inherits from the application's controller instead of ActionController::Base
   class ApplicationController < ::ApplicationController
-    allow_unauthenticated_access
-    
+    include Authentication
     helper Blogit::ApplicationHelper
     helper Blogit::LayoutHelper
     helper Blogit::PostsHelper
