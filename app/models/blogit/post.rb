@@ -1,9 +1,6 @@
 module Blogit
   class Post < ApplicationRecord
     require "kaminari"
-    require "acts-as-taggable-on"
-
-    acts_as_taggable
 
     paginates_per(Blogit.configuration.posts_per_page)
 
@@ -17,19 +14,11 @@ module Blogit
 
     validates :description, presence: Blogit.configuration.show_post_description
 
-    validates :blogger_id, presence: true
-
     validates :state, presence: true
 
     # ================
     # = Associations =
     # ================
-
-    ##
-    # The blogger (User, Admin, etc.) who wrote this Post
-    #
-    # Returns a Blogger (polymorphic type)
-    belongs_to :blogger, polymorphic: true, default: -> { Current.user }
 
     ##
     # The {Comment Comments} written on this Post
@@ -102,30 +91,6 @@ module Blogit
     def comments=(value)
       check_comments_config
       super(value)
-    end
-
-    # The blogger who wrote this {Post Post's} display name
-    #
-    # Returns the blogger's display name as a String if it's set.
-    # Returns an empty String if blogger is not present.
-    # Raises a ConfigurationError if the method called is not defined on {#blogger}
-    def blogger_display_name
-      return "" if blogger.blank?
-
-      if blogger.respond_to?(Blogit.configuration.blogger_display_name_method)
-        blogger.send(Blogit.configuration.blogger_display_name_method)
-      else
-        method_name = Blogit.configuration.blogger_display_name_method
-        raise ConfigurationError, "#{blogger.class}##{method_name} is not defined"
-      end
-    end
-
-    # If there's a blogger and that blogger responds to :twitter_username, returns that.
-    # Otherwise, returns nil
-    def blogger_twitter_username
-      if blogger.respond_to?(:twitter_username)
-        blogger.twitter_username
-      end
     end
 
     private

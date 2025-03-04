@@ -30,27 +30,13 @@ Blogit.configure do |config|
 
   # If blog content contains code, this should be highlighted using
   # one of the renderers.
-  config.highlight_code_syntax = true
-
-  # The syntax highlighter to use when highlight_code_syntax is set.
-  config.syntax_highlighter = :albino
+  config.highlight_code_syntax = false
 
   # RSS Feed title content
   config.rss_feed_title = "#{Rails.application.engine_name.titleize} Blog Posts"
 
   # RSS Feed description content
   config.rss_feed_description = "Latest from #{Rails.application.engine_name.titleize}"
-
-  # When using redcarpet as content parser, pass these options as defaults.
-  # @see here for more options: https://github.com/tanoku/redcarpet
-  config.redcarpet_options = {
-    hard_wrap: true,
-    filter_html: true,
-    autolink: true,
-    no_intraemphasis: true,
-    fenced_code_blocks: true,
-    gh_blockcode: true
-  }
 
   # If this is set, Blogit::PostsController will use the layout named here
   config.layout = "application"
