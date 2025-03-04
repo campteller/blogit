@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "albino", ">=1.3.3"
   s.add_runtime_dependency "jquery-rails"
   s.add_runtime_dependency "kaminari"
-  s.add_runtime_dependency "rails", "< 8", ">= 5.0.0"
+  s.add_runtime_dependency "rails", ">= 5.0.0"
   s.add_runtime_dependency "redcarpet"
   s.add_runtime_dependency "RedCloth", ">=4.2.9"
 
